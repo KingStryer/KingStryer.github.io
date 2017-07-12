@@ -6,8 +6,9 @@
 <script src="aframe-animation-component.js"></script>
 <!--<script src="Event.js"></script>-->
 <script src="aframe-extras.loaders.js"></script>
-<!--<script src="loadfile.js"></script>-->
+<script src="loadfile.js"></script>
 <!--<script src="test.js"></script>-->
+<!--<script data-main="app" src="require.js"></script>-->
 <script>
     AFRAME.registerComponent('do-something', {
         init: function () {
@@ -16,9 +17,6 @@
     });
 </script>
 
-<!--<input type="file" id="fileinput" />-->
-<!--<input type="file" id="fileInput">-->
-<!--<pre id="fileDisplayArea"><pre>-->
 
 <head>
 <meta charset="utf-8" />
@@ -32,45 +30,8 @@
 <body style='margin : 0px; overflow: hidden;'>
 <a-scene embedded artoolkit='sourceType: webcam;' inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js" do-something>
 
-        <!--<a-curve id="track1">
-            <a-curve-point position="-2 2 -3"></a-curve-point>
-            <a-curve-point position="0 1 -3"></a-curve-point>
-            <a-curve-point position="2 2 -3"></a-curve-point>
-        </a-curve>-->
-
-<!--<a-curve id="track1">
-    <a-curve-point position="0.35 0.5 0"></a-curve-point>
-        </a-curve>-->
-
-        <!--<a-box color="#ff0000" width="0.1" height="0.3" depth="0.1" positiopn="0 1 0"
-               alongpath="curve: #track1; loop:true; dur:6000; rotate:true;">
-        </a-box>-->
-
     
-
-<a-curve id="track2"> <!--curve="closed:true;"-->
-    <a-curve-point position="0.35 0.5 0" ></a-curve-point>
-    <a-curve-point position="0.35 0.5 1" ></a-curve-point>
-    <a-curve-point position="0.35 0.5 1.5" ></a-curve-point>
-    <a-curve-point position="1 1 1.5" ></a-curve-point>
-    <a-curve-point position="2 2 1.5" ></a-curve-point>
-    <a-curve-point position="3 3 2" ></a-curve-point>
- </a-curve>
-    <a-entity  scale="4 4 4"  text= "color:red; align:center; value: Injection" color="#ff0000" width="0.1" height="0.3" depth="0.1" position="0.35 0.2 0"
-           alongpath="curve: #track2; loop:true; dur:6000; rotate:false;">
-    </a-entity>
-
-    <!--<a-entity scale="8 8 8" text="font:https://cdn.aframe.io/fonts/mozillavr.fnt; color:red; align:center; value: Server" color="#ff0000" position="0.35 2.5 0">
-        <a-animation attribute="rotation"
-                     dur="10000"
-                     to="0 360 0"
-                     ease="linear"
-                     repeat="indefinite">
-
-        </a-animation>
-    </a-entity>-->
-
-    <a-box src="crow-logo.png" scale="1 1 0" segments-height="53" position="0.35 3 0">
+    <a-box src="crow-logo.png" scale="1 1 0" segments-height="53" position="0 3 0">
         <a-animation attribute="rotation"
                          dur="10000"
                          to="0 360 0"
@@ -80,146 +41,321 @@
             </a-animation>
 
         </a-box>
+    <a-entity  geometry="primitive: box" material="color:black" scale="15 0 15" position="0 -0.2 0" ></a-entity>
 
-        <a-curve id="track3" >
-            <a-curve-point position="0.35 0.5 0.5"></a-curve-point>
-            <a-curve-point position="-0.1 1.5 0.8"></a-curve-point>
-            <a-curve-point position="-0.5 1.8 1"></a-curve-point>
-            <a-curve-point position="-1 2 1.3"></a-curve-point>
-            <a-curve-point position="-2 2 1.7"></a-curve-point>
-            <a-curve-point position="-2.5 1.5 2"></a-curve-point>
-            <a-curve-point position="-2.8 1 2.3"></a-curve-point>
-            <a-curve-point position="-3 0.5 2.6"></a-curve-point>
+        <a-curve id="greentrack">
+            <a-curve-point position="-4 0.3 0"></a-curve-point>
+            
+            <a-curve-point position="-3 1.3 0"></a-curve-point>
+            
+            <a-curve-point position="-2 2.3 0"></a-curve-point>
+            
+            <a-curve-point position="-1 3.3 0"></a-curve-point>
+            <a-curve-point position="-1 3.8 0"></a-curve-point>
+            
+            <a-curve-point position="0 4.3 0"></a-curve-point>
+            
+            <a-curve-point position="1 3.8 0"></a-curve-point>
+            <a-curve-point position="1 3.3 0"></a-curve-point>
+            
+            <a-curve-point position="2 2.3 0"></a-curve-point>
+            
+            <a-curve-point position="3 1.3 0"></a-curve-point>
+           
+            <a-curve-point position="4 0.3 0"></a-curve-point>
            </a-curve>
-           <a-entity visible="true" id="test3"  geometry="primitive: sphere" material="color: green" scale="0.1 0.1 0.1" position="3 0.5 0"
-                  alongpath="curve: #track3; loop:true; dur:3000; rotate:true;">
-               <!--<a-animation attribute="visible" deley="1000" to="true"></a-animation>
-               scale="0.01 0.01 1"-->
+           <a-entity visible="true" id="green"  geometry="primitive: sphere" material="color: green" scale="0.1 0.1 0.1" position="-4 0.3 0"
+                  alongpath="curve: #greentrack; loop:true; dur:1500; rotate:true;">
+               
            </a-entity>
 
-        <a-curve id="track4" >
+        <a-curve id="yellowtrack">
             <!--curve="closed:true;"-->
-            <a-curve-point position="0.35 0.5 0" ></a-curve-point>
-            <a-curve-point position="-0.1 1.5 0" ></a-curve-point>
-            <a-curve-point position="-0.5 1.8 0" ></a-curve-point>
-            <a-curve-point position="-1 2 0" ></a-curve-point>
-            <a-curve-point position="-2 2 0"></a-curve-point>
-            <a-curve-point position="-2.5 1.5 0" ></a-curve-point>
-            <a-curve-point position="-2.8 1 0" ></a-curve-point>
-            <a-curve-point position="-3 0.5 0" ></a-curve-point>
+            <a-curve-point position="-4 0.3 0"></a-curve-point>
+
+            <a-curve-point position="-3 1.3 1"></a-curve-point>
+
+            <a-curve-point position="-2 2.3 2"></a-curve-point>
+
+            <a-curve-point position="-1 3.3 3"></a-curve-point>
+
+            <a-curve-point position="0 4.3 4"></a-curve-point>
+
+
 
         </a-curve>
-        <a-entity visible="true" id="test4" geometry="primitive: sphere" material="color: yellow" scale="0.1 0.1 0.1" position="0.35 0.5 0" rotation="0 0 23"
-                  alongpath="curve:#track4 ; loop:true; dur:3000; rotate:true;">
-            <!--<a-animation attribute="visible" deley="1000" to="true"></a-animation>-->
-            <!--scale="0.01 1 0.01"-->
+        <a-entity visible="true" id="yellow" geometry="primitive: sphere" material="color: yellow" scale="0.1 0.1 0.1" position="-4 0.3 0"
+                  alongpath="curve:#yellowtrack ; loop:true; dur:1500; rotate:true;">
+           
         </a-entity>
 
-        <a-curve id="track5">
+        <a-curve id="orangetrack">
             <!--curve="closed:true;"-->
-            <a-curve-point position="0.35 0.5 0"></a-curve-point>
-            <a-curve-point position="0.5 1.8 0" ></a-curve-point>
-            <a-curve-point position="1 2 0"></a-curve-point>
-            <a-curve-point position="2 2 0"></a-curve-point>
-            <a-curve-point position="2.5 1.5 0"></a-curve-point>
-            <a-curve-point position="2.8 1 0"></a-curve-point>
-            <a-curve-point position="3 0.5 0"  ></a-curve-point>
+            <a-curve-point position="-4 0.3 0"></a-curve-point>
+
+            <a-curve-point position="-3 1.3 -1"></a-curve-point>
+
+            <a-curve-point position="-2 2.3 -2"></a-curve-point>
+
+            <a-curve-point position="-1 3.3 -3"></a-curve-point>
+
+            <a-curve-point position="0 4.3 -4"></a-curve-point>
+
+
         </a-curve>
 
-        <a-entity visible="true" id="test5"  geometry="primitive: sphere" material="color:orange" scale="0.1 0.1 0.1" position="0.35 0.5 0" rotation="0 0 -23"
-                  alongpath="curve:#track5 ; loop:true; dur:3000; rotate:true;">
-            <!--<a-animation attribute="material.color" from="red" to="blue" dur="3000" repeat="indefinite"></a-animation>
-            <a-animation attribute="visible" dur="3000" from="false" to="true" repeat="indefinite"></a-animation>-->
-            <!--scale="0.01 1 0.01"-->
+        <a-entity visible="true" id="orange"  geometry="primitive: sphere" material="color:orange" scale="0.1 0.1 0.1" position="-4 0.3 0" 
+                  alongpath="curve:#orangetrack ; loop:true; dur:1500; rotate:true;">
+            
         </a-entity>
 
-        <a-curve id="track6" >
+        <a-curve id="pinktrack">
         <!--curve="closed:true;"-->
-            <a-curve-point position="0.35 0.5 -0.5"></a-curve-point>
-            <a-curve-point position="-0.1 1.5 -0.8"></a-curve-point>
-            <a-curve-point position="-0.5 1.8 -1"></a-curve-point>
-            <a-curve-point position="-1 2 -1.3"></a-curve-point>
-            <a-curve-point position="-2 2 -1.7"></a-curve-point>
-            <a-curve-point position="-2.5 1.5 -2"></a-curve-point>
-            <a-curve-point position="-2.8 1 -2.3"></a-curve-point>
-            <a-curve-point position="-3 0.5 -2.6"></a-curve-point>
+            <a-curve-point position="-4 0.3 0"></a-curve-point>
+
+            <a-curve-point position="-3 1.3 2"></a-curve-point>
+
+            <a-curve-point position="-2 2.3 4"></a-curve-point>
+
+            <a-curve-point position="-1 3.3 6"></a-curve-point>
+
+            <a-curve-point position="0 4.3 8"></a-curve-point>
+
+
     </a-curve>
 
-        <a-entity visible="true" id="test6" geometry="primitive: sphere" material="color:pink" scale="0.1 0.1 0.1" position="4 0.5 0" rotation="0 0 -23"
-                  alongpath="curve: #track6; loop:true; dur:3000; rotate:true;"></a-entity>
+        <a-entity visible="true" id="pink" geometry="primitive: sphere" material="color:pink" scale="0.1 0.1 0.1" position="4 0.5 0" 
+                  alongpath="curve: #pinktrack; loop:true; dur:1500; rotate:true;"></a-entity>
 
-    <a-curve id="track7">
+    <a-curve id="purpletrack">
         <!--curve="closed:true;"-->
-        <a-curve-point position="0.35 0.5 0.3"></a-curve-point>
-        <a-curve-point position="0.1 1.5 0.8"></a-curve-point>
-        <a-curve-point position="0.5 1.8 1.5"></a-curve-point>
-        <a-curve-point position="1 2 1.8"></a-curve-point>
-        <a-curve-point position="2 2 2.3"></a-curve-point>
-        <a-curve-point position="2.5 1.5 2.8"></a-curve-point>
-        <a-curve-point position="2.8 1 3.3"></a-curve-point>
-        <a-curve-point position="3 0.5 3.8"></a-curve-point>
+        <a-curve-point position="-4 0.3 0"></a-curve-point>
+
+        <a-curve-point position="-3 1.3 -2"></a-curve-point>
+
+        <a-curve-point position="-2 2.3 -4"></a-curve-point>
+
+        <a-curve-point position="-1 3.3 -6"></a-curve-point>
+
+        <a-curve-point position="0 4.3 -8"></a-curve-point>
+
+
     </a-curve>
 
-    <a-entity visible="true" id="test7" geometry="primitive: sphere" material="color:purple" scale="0.1 0.1 0.1" position="5 0.5 0" rotation="0 0 -23"
-              alongpath="curve: #track7; loop:true; dur:3000; rotate:true;"></a-entity>
+    <a-entity visible="true" id="purple" geometry="primitive: sphere" material="color:purple" scale="0.1 0.1 0.1" position="-4 0.3 0"
+              alongpath="curve: #purpletrack; loop:true; dur:1500; rotate:true;"></a-entity>
 
-    <a-curve id="track8">
+    <a-curve id="lightbluetrack">
         <!--curve="closed:true;"-->
-        <a-curve-point position="0.35 0.5 -0.3"></a-curve-point>
-        <a-curve-point position="0.1 1.5 -0.8"></a-curve-point>
-        <a-curve-point position="0.5 1.8 -1.5"></a-curve-point>
-        <a-curve-point position="1 2 -1.8"></a-curve-point>
-        <a-curve-point position="2 2 -2.3"></a-curve-point>
-        <a-curve-point position="2.5 1.5 -2.8"></a-curve-point>
-        <a-curve-point position="2.8 1 -3.3"></a-curve-point>
-        <a-curve-point position="3 0.5 -3.8"></a-curve-point>
+        <a-curve-point position="-4 0.3 0"></a-curve-point>
+
+        <a-curve-point position="-3 1.3 0.5"></a-curve-point>
+
+        <a-curve-point position="-2 2.3 1.5"></a-curve-point>
+
+        <a-curve-point position="-1 3.3 2.5"></a-curve-point>
+
+        <a-curve-point position="0 4.3 3.5"></a-curve-point>
+
+
+
     </a-curve>
 
-    <a-entity visible="true" id="test8" geometry="primitive: sphere" material="color:lightblue" scale="0.1 0.1 0.1" position="6 0.5 0" rotation="0 0 -23"
-              alongpath="curve: #track8; loop:true; dur:3000; rotate:true;"></a-entity>
+    <a-entity visible="true" id="lightblue" geometry="primitive: sphere" material="color:lightblue" scale="0.1 0.1 0.1" position="-4 0.3 0"
+              alongpath="curve: #lightbluetrack; loop:true; dur:1500; rotate:true;"></a-entity>
 
-    <a-curve id="track9" >
+    <a-curve id="browntrack" >
         <!--curve="closed:true;"-->
-        <a-curve-point position="0.35 0.5 -0.8"></a-curve-point>
-        <a-curve-point position="0.1 1.5 -1.6"></a-curve-point>
-        <a-curve-point position="0.5 1.8 -2.4"></a-curve-point>
-        <a-curve-point position="1 2 -3.2"></a-curve-point>
-        <a-curve-point position="2 2 -4"></a-curve-point>
-        <a-curve-point position="2.5 1.5 -4.8"></a-curve-point>
-        <a-curve-point position="2.8 1 -5.6"></a-curve-point>
-        <a-curve-point position="3 0.5 -6.4"></a-curve-point>
-    </a-curve>
-     <a-entity visible="true" id="test9" geometry="primitive: sphere" material="color:brown" scale="0.1 0.1 0.1" position="5.5 0.5 0" rotation="0 0 -23"
-               alongpath="curve: #track9; loop:true; dur:3000; rotate:true;"></a-entity>
+        <a-curve-point position="-4 0.3 0"></a-curve-point>
 
-         <a-curve id="track10" >
+        <a-curve-point position="-3 1.3 1.5"></a-curve-point>
+
+        <a-curve-point position="-2 2.3 2.5"></a-curve-point>
+
+        <a-curve-point position="-1 3.3 3.5"></a-curve-point>
+
+        <a-curve-point position="0 4.3 4.5"></a-curve-point>
+
+
+
+    </a-curve>
+     <a-entity visible="true" id="brown" geometry="primitive: sphere" material="color:brown" scale="0.1 0.1 0.1" position="-4 0.3 0"
+               alongpath="curve: #browntrack; loop:true; dur:1500; rotate:true;"></a-entity>
+
+         <a-curve id="bluetrack" >
              <!--curve="closed:true;"-->
-             <a-curve-point position="0.35 0.5 0.8"></a-curve-point>
-             <a-curve-point position="0.1 1.5 1.6"></a-curve-point>
-             <a-curve-point position="0.5 1.8 2.4"></a-curve-point>
-             <a-curve-point position="1 2 3.2"></a-curve-point>
-             <a-curve-point position="2 2 4"></a-curve-point>
-             <a-curve-point position="2.5 1.5 4.8"></a-curve-point>
-             <a-curve-point position="2.8 1 5.6"></a-curve-point>
-             <a-curve-point position="3 0.5 6.4"></a-curve-point>
+             <a-curve-point position="-4 0.3 0"></a-curve-point>
+
+             <a-curve-point position="-3 1.3 -1.5"></a-curve-point>
+
+             <a-curve-point position="-2 2.3 -2.5"></a-curve-point>
+
+             <a-curve-point position="-1 3.3 -3.5"></a-curve-point>
+
+             <a-curve-point position="0 4.3 -4.5"></a-curve-point>
+
+
          </a-curve>
 
-         <a-entity visible="true"  id="test10" geometry="primitive: sphere" material="color:blue" scale="0.1 0.1 0.1" position="4.5 0.5 0" rotation="0 0 -23"
-                   alongpath="curve: #track10; loop:true; dur:3000; rotate:true;"></a-entity>
+         <a-entity visible="true"  id="blue" geometry="primitive: sphere" material="color:blue" scale="0.1 0.1 0.1" position="-4 0.3 0"
+                   alongpath="curve: #bluetrack; loop:true; dur:1500; rotate:true;"></a-entity>
 
-             <a-curve id="track11" >
+             <a-curve id="redtrack" >
                  <!--curve="closed:true;"-->
-                 <a-curve-point position="0.35 0.5 0.1"></a-curve-point>
-                 <a-curve-point position="0.5 1.8 0.3"></a-curve-point>
-                 <a-curve-point position="1 2 0.5"></a-curve-point>
-                 <a-curve-point position="2 2 0.7"></a-curve-point>
-                 <a-curve-point position="2.5 1.5 0.9"></a-curve-point>
-                 <a-curve-point position="2.8 1 1.1"></a-curve-point>
-                 <a-curve-point position="3 0.5 1.3"></a-curve-point>
+                 <a-curve-point position="-4 0.3 0"></a-curve-point>
+
+                 <a-curve-point position="-3 1.3 4"></a-curve-point>
+
+                 <a-curve-point position="-2 2.3 2"></a-curve-point>
+
+                 <a-curve-point position="-1 3.3 4"></a-curve-point>
+
+                 <a-curve-point position="0 4.3 8"></a-curve-point>
+
+                 <a-curve-point position="1 3.3 4"></a-curve-point>
+
+                 <a-curve-point position="2 2.3 2"></a-curve-point>
+
+                 <a-curve-point position="3 1.3 4"></a-curve-point>
+
+                 <a-curve-point position="4 0.3 0"></a-curve-point>
              </a-curve>
 
-             <a-entity visible="true" id="test11" geometry="primitive: sphere" material="color:red" scale="0.1 0.1 0.1" position="3.5 0.5 0" rotation="0 0 -23"
-                       alongpath="curve: #track11; loop:true; dur:3000; rotate:true;"></a-entity>
+             <a-entity visible="true" id="red" geometry="primitive: sphere" material="color:red" scale="0.1 0.1 0.1" position="-4 0.3 0"
+                       alongpath="curve: #redtrack; loop:true; dur:3000; rotate:true;"></a-entity>
+
+    <a-curve id="defense1track">
+        <!--curve="closed:true;"-->
+        <a-curve-point position="4 0.3 0"></a-curve-point>
+
+        <a-curve-point position="3 1.3 1"></a-curve-point>
+
+        <a-curve-point position="2 2.3 2"></a-curve-point>
+
+        <a-curve-point position="1 3.3 3"></a-curve-point>
+
+        <a-curve-point position="0 4.3 4"></a-curve-point>
+
+
+
+    </a-curve>
+    <a-entity visible="true" id="defense1" geometry="primitive: sphere" material="color: white" scale="0.1 0.1 0.1" position="4 0.3 0"
+              alongpath="curve:#defense1track ; loop:true; dur:1500; rotate:true;">
+
+    </a-entity>
+
+    <a-curve id="defense2track">
+        <!--curve="closed:true;"-->
+        <a-curve-point position="4 0.3 0"></a-curve-point>
+
+        <a-curve-point position="3 1.3 -1"></a-curve-point>
+
+        <a-curve-point position="2 2.3 -2"></a-curve-point>
+
+        <a-curve-point position="1 3.3 -3"></a-curve-point>
+
+        <a-curve-point position="0 4.3 -4"></a-curve-point>
+
+    </a-curve>
+    <a-entity visible="true" id="defense2" geometry="primitive: sphere" material="color: white" scale="0.1 0.1 0.1" position="4 0.3 0"
+              alongpath="curve:#defense2track ; loop:true; dur:1500; rotate:true;">
+
+    </a-entity>
+
+    <a-curve id="defense3track">
+        <!--curve="closed:true;"-->
+        <a-curve-point position="4 0.3 0"></a-curve-point>
+
+        <a-curve-point position="3 1.3 2"></a-curve-point>
+
+        <a-curve-point position="2 2.3 4"></a-curve-point>
+
+        <a-curve-point position="1 3.3 6"></a-curve-point>
+
+        <a-curve-point position="0 4.3 8"></a-curve-point>
+
+    </a-curve>
+    <a-entity visible="true" id="defense3" geometry="primitive: sphere" material="color: white" scale="0.1 0.1 0.1" position="4 0.3 0"
+              alongpath="curve:#defense3track ; loop:true; dur:1500; rotate:true;">
+
+    </a-entity>
+
+    <a-curve id="defense4track">
+        <!--curve="closed:true;"-->
+        <a-curve-point position="4 0.3 0"></a-curve-point>
+
+        <a-curve-point position="3 1.3 -2"></a-curve-point>
+
+        <a-curve-point position="2 2.3 -4"></a-curve-point>
+
+        <a-curve-point position="1 3.3 -6"></a-curve-point>
+
+        <a-curve-point position="0 4.3 -8"></a-curve-point>
+
+    </a-curve>
+    <a-entity visible="true" id="defense4" geometry="primitive: sphere" material="color: white" scale="0.1 0.1 0.1" position="4 0.3 0"
+              alongpath="curve:#defense4track ; loop:true; dur:1500; rotate:true;">
+
+    </a-entity>
+
+    <a-curve id="defense5track">
+        <!--curve="closed:true;"-->
+        <a-curve-point position="4 0.3 0"></a-curve-point>
+
+        <a-curve-point position="3 1.3 0.5"></a-curve-point>
+
+        <a-curve-point position="2 2.3 1.5"></a-curve-point>
+
+        <a-curve-point position="1 3.3 2.5"></a-curve-point>
+
+        <a-curve-point position="0 4.3 3.5"></a-curve-point>
+
+    </a-curve>
+    <a-entity visible="true" id="defense5" geometry="primitive: sphere" material="color: white" scale="0.1 0.1 0.1" position="4 0.3 0"
+              alongpath="curve:#defense5track ; loop:true; dur:1500; rotate:true;">
+
+    </a-entity>
+
+    <a-curve id="defense6track">
+        <!--curve="closed:true;"-->
+        <a-curve-point position="4 0.3 0"></a-curve-point>
+
+        <a-curve-point position="3 1.3 1.5"></a-curve-point>
+
+        <a-curve-point position="2 2.3 2.5"></a-curve-point>
+
+        <a-curve-point position="1 3.3 3.5"></a-curve-point>
+
+        <a-curve-point position="0 4.3 4.5"></a-curve-point>
+    </a-curve>
+    <a-entity visible="true" id="defense6" geometry="primitive: sphere" material="color: white" scale="0.1 0.1 0.1" position="4 0.3 0"
+              alongpath="curve:#defense6track ; loop:true; dur:1500; rotate:true;">
+
+    </a-entity>
+
+    <a-curve id="defense7track">
+        <!--curve="closed:true;"-->
+        <a-curve-point position="4 0.3 0"></a-curve-point>
+
+        <a-curve-point position="3 1.3 -1.5"></a-curve-point>
+
+        <a-curve-point position="2 2.3 -2.5"></a-curve-point>
+
+        <a-curve-point position="1 3.3 -3.5"></a-curve-point>
+
+        <a-curve-point position="0 4.3 -4.5"></a-curve-point>
+
+    </a-curve>
+    <a-entity visible="true" id="defense7" geometry="primitive: sphere" material="color: white" scale="0.1 0.1 0.1" position="4 0.3 0"
+              alongpath="curve:#defense7track ; loop:true; dur:1500; rotate:true;">
+
+    </a-entity>
+
+
+
+
+
+
 
                  <a-assets>
                      <a-mixin id="eye" geometry="primitive:sphere; radius:0.3" material="color:#ff0000"></a-mixin>
@@ -227,309 +363,288 @@
                  </a-assets>
                  <a-entity id="Crow" scale="8 8 8" text="font:https://cdn.aframe.io/fonts/mozillavr.fnt; color:red; align:center; value: Crow" color="#ff0000" position="0 3 0" visible="false"></a-entity>
 
-                 <!--<a-draw-curve curveref="#track2" material="shader: line; color: red;"></a-draw-curve>-->
-                 <!--<a-assets>
-        <a-asset-item id="myPlyModel" src="PC12.ply"></a-asset-item>
-                </a-assets>
-        <a-entity ply-model="src: #myPlyModel" rotation="-90 0 0" scale="0.5 0.5 0.5" position="0 0 0" alongpath="curve: #track1; loop:true; dur:6000; rotate:false;">
-                          animation="property: color; dir: alternate; dur: 1000;
-                                   easing: easeInSine; loop: true; to: #5F5"
-                            animation__scale="property: scale; dir: alternate; dur: 200;
-                                   easing: easeInSine; loop: true; to: 0.05 0.05 0.05"
-                            animation__yoyo="property: position; dir: alternate; dur: 1000;
-                                         easing: easeInSine; loop: true; to: 2 1 0">
-
-                </a-entity>
-
-
-                <!--<a-assets>
-                    <a-asset-item id="blendmodel" src="PC12.blend"></a-asset-item>
-                </a-assets>
-                <a-entity blend-model="#blendmodel" rotation="-90 0 0" scale="0.5 0.5 0.5" position="0 0 0" alongpath="curve: #track1; loop:true; dur:6000; rotate:false;"></a-entity>-->
-
+                
 
                  <a-assets>
-                     <a-asset-item id="PC" src="PC.dae"></a-asset-item>
-                     <!--<a-asset-item id="PC-mtl" src="Pcmodelmtl.mtl"></a-asset-item>-->
+                     <a-asset-item id="PCred" src="PCred.dae"></a-asset-item>
+                     
+
+                     <a-asset-item id="PCblue" src="PCblue.dae"></a-asset-item>
                  </a-assets>
 
-                 <a-collada-model src="#PC" rotation="0 0 0" scale="3 3 3" position="0.35 0 0"></a-collada-model>
-                 <!--<a-entity obj-model="obj: #PC-obj; mtl: #PC-mtl" rotation="0 0 0" scale="3 3 3" position="0 0.5 0"></a-entity>-->
+                 <a-collada-model src="#PCred" rotation="0 90 0" scale="3 3 3" position="-4 0 0"></a-collada-model>
+                 <a-collada-model src="#PCblue" rotation="0 -90 0" scale="3 3 3" position="4 0 0"></a-collada-model>
+                 
 
 
 
                  <a-marker-camera preset='hiro'></a-marker-camera>
 
-                 <!--<a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
-        <a-sphere src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_4096.jpg" radius="0.8" segments-height="53" position="0 1 0"
-                    animation="property: color; dir: alternate; dur: 1000;
-                           easing: easeInSine; loop: true; to: #5F5"
-                    animation__scale="property: scale; dir: alternate; dur: 200;
-                           easing: easeInSine; loop: true; to: 1.2 1 1.2"
-                    animation__yoyo="property: position; dir: alternate; dur: 1000;
-                                 easing: easeInSine; loop: true; to: 2 1 0">
-
-           <!-- <a-animation attribute="rotation"
-                         dur="10000"
-                         to="0 360 0"
-                         ease="linear"
-                         repeat="indefinite">
-
-            </a-animation>
-
-        </a-sphere>-->
-                 <!--<a-cylinder color="#F55" radius="0.5" position="0 1 0"
-                    animation="property: color; dir: alternate; dur: 1000;
-                           easing: easeInBounce; loop: true; to: #5F5"
-                    animation__scale="property: scale; dir: alternate; dur: 200;
-                           easing: easeInBounce; loop: true; to: 1.2 1 1.2"
-                    animation__yoyo="property: position; dir: alternate; dur: 1000;
-                                 easing: easeInBounce; loop: true; to: 2 1 0">
-        </a-cylinder>-->
-                 <!--<a-box color="#CCC" radius="0.5" position="0 1.5 0"></a-box>-->
-                 <!--<a-entity geometry="primitive: plane; height: auto; width: auto"
-             material="color: blue"
-             text="width: 10; value: Hello."></a-entity>-->
-                 <!--<a-scene stats></a-scene>-->
-                 <!--<a-entity camera>
-            <a-entity cursor="fuse: true; fuseTimeout: 500"
-                      position="0 0 -1"
-                      geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                      material="color: black; shader: flat">
-            </a-entity>
-        </a-entity>
-        <a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue"></a-entity>-->
+                 
 </a-scene>
-    <!--<script>
-        var mover = document.querySelector("#mover");
-        mover.addEventListener("movingended", function () {
-            AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#path2");
-            AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "20000");
-        });
-    </script>-->
+   
 </body>
 
 <script>
-    //var sceneEl = document.querySelector('a-scene');
-    //console.log(sceneEl.querySelectorAll('[visible]'));
+    
+        //var green = document.querySelector("#green");
+        //var yellow = document.querySelector("#yellow");
+        ////console.log(mover);
+        ////console.log(AFRAME.utils.entity.getComponentProperty(mover, 'alongpath.curve'));
+        //var orange = document.querySelector("#orange");
+        ////var check = AFRAME.utils.entity.getComponentProperty(mover, 'alongpath.curve');
+        //var pink = document.querySelector("#pink");
+        //var purple = document.querySelector("#purple");
+        //var lightblue = document.querySelector("#lightblue");
+        //var brown = document.querySelector("#brown");
+        //var blue = document.querySelector("#blue");
+        //var red = document.querySelector("#red");
+        //console.log(blue);
+         
 
-    //var mover = document.querySelector("#ob4");
-    //console.log(mover);
-    //console.log(mover.querySelectorAll('[id]'));
-    //var testing = document.querySelector("#test4");
-    //var testing2 = document.querySelector("#test5");
-
-    //testing.addEventListener("movingended", function () {
-    //        AFRAME.utils.entity.setComponentProperty(mover, "alongpath.curve", "#track5");
-    //        AFRAME.utils.entity.setComponentProperty(mover, "alongpath.dur", "3000");
-    //    });
-
-        
-    //testing2.addEventListener("movingended", function () {
-    //        AFRAME.utils.entity.setComponentProperty(mover, "alongpath.curve", "#track4");
-    //        AFRAME.utils.entity.setComponentProperty(mover, "alongpath.dur", "3000");
-            
-    //    });
-        var test3 = document.querySelector("#test3");
-        var test4 = document.querySelector("#test4");
-        //console.log(mover);
-        //console.log(AFRAME.utils.entity.getComponentProperty(mover, 'alongpath.curve'));
-        var test5 = document.querySelector("#test5");
-        //var check = AFRAME.utils.entity.getComponentProperty(mover, 'alongpath.curve');
-        var test6 = document.querySelector("#test6");
-        var test7 = document.querySelector("#test7");
-        var test8 = document.querySelector("#test8");
-        var test9 = document.querySelector("#test9");
-        var test10 = document.querySelector("#test10");
-        var test11 = document.querySelector("#test11");
-        console.log(test10);
-          
-
- 
-        test4.addEventListener("movingended", function () {
-                //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
-                //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
-                //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
-                AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
-                AFRAME.utils.entity.setComponentProperty(test3, "visible", "false");
-                AFRAME.utils.entity.setComponentProperty(test5, "visible", "false");
-                AFRAME.utils.entity.setComponentProperty(test6, "visible", "false");
-                AFRAME.utils.entity.setComponentProperty(test7, "visible", "false");
-                AFRAME.utils.entity.setComponentProperty(test8, "visible", "false");
-                AFRAME.utils.entity.setComponentProperty(test9, "visible", "false");
-                AFRAME.utils.entity.setComponentProperty(test10, "visible", "false");
-                AFRAME.utils.entity.setComponentProperty(test11, "visible", "false");
-
-                
-                test4.addEventListener("movingended", function () {
-                    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track4");
-                    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
-                    //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track5");
-                    AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
-                    AFRAME.utils.entity.setComponentProperty(test3, "visible", "true");
-                    AFRAME.utils.entity.setComponentProperty(test5, "visible", "true");
-                    AFRAME.utils.entity.setComponentProperty(test6, "visible", "true");
-                    AFRAME.utils.entity.setComponentProperty(test7, "visible", "true");
-                    AFRAME.utils.entity.setComponentProperty(test8, "visible", "true");
-                    AFRAME.utils.entity.setComponentProperty(test9, "visible", "true");
-                    AFRAME.utils.entity.setComponentProperty(test10, "visible", "true");
-                    AFRAME.utils.entity.setComponentProperty(test11, "visible", "true");
-
-                   
-                    test4.addEventListener("movingended", function () {
-                        //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
-                        //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
-                        //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
-                        AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
-                        AFRAME.utils.entity.setComponentProperty(test3, "visible", "false");
-                        AFRAME.utils.entity.setComponentProperty(test5, "visible", "false");
-                        AFRAME.utils.entity.setComponentProperty(test6, "visible", "false");
-                        AFRAME.utils.entity.setComponentProperty(test7, "visible", "false");
-                        AFRAME.utils.entity.setComponentProperty(test8, "visible", "false");
-                        AFRAME.utils.entity.setComponentProperty(test9, "visible", "false");
-                        AFRAME.utils.entity.setComponentProperty(test10, "visible", "false");
-                        AFRAME.utils.entity.setComponentProperty(test11, "visible", "false");
-                        
-                        test4.addEventListener("movingended", function () {
-                            //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track4");
-                            //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
-                            //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track5");
-                            AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
-                            AFRAME.utils.entity.setComponentProperty(test3, "visible", "true");
-                            AFRAME.utils.entity.setComponentProperty(test5, "visible", "true");
-                            AFRAME.utils.entity.setComponentProperty(test6, "visible", "true");
-                            AFRAME.utils.entity.setComponentProperty(test7, "visible", "true");
-                            AFRAME.utils.entity.setComponentProperty(test8, "visible", "true");
-                            AFRAME.utils.entity.setComponentProperty(test9, "visible", "true");
-                            AFRAME.utils.entity.setComponentProperty(test10, "visible", "true");
-                            AFRAME.utils.entity.setComponentProperty(test11, "visible", "true");
-
-                            test4.addEventListener("movingended", function () {
-                                //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
-                                //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
-                                //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
-                                AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
-                                AFRAME.utils.entity.setComponentProperty(test3, "visible", "false");
-                                AFRAME.utils.entity.setComponentProperty(test5, "visible", "false");
-                                AFRAME.utils.entity.setComponentProperty(test6, "visible", "false");
-                                AFRAME.utils.entity.setComponentProperty(test7, "visible", "false");
-                                AFRAME.utils.entity.setComponentProperty(test8, "visible", "false");
-                                AFRAME.utils.entity.setComponentProperty(test9, "visible", "false");
-                                AFRAME.utils.entity.setComponentProperty(test10, "visible", "false");
-                                AFRAME.utils.entity.setComponentProperty(test11, "visible", "false");
-                                test4.addEventListener("movingended", function () {
-                                    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track4");
-                                    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
-                                    //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track5");
-                                    AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
-                                    AFRAME.utils.entity.setComponentProperty(test3, "visible", "true");
-                                    AFRAME.utils.entity.setComponentProperty(test5, "visible", "true");
-                                    AFRAME.utils.entity.setComponentProperty(test6, "visible", "true");
-                                    AFRAME.utils.entity.setComponentProperty(test7, "visible", "true");
-                                    AFRAME.utils.entity.setComponentProperty(test8, "visible", "true");
-                                    AFRAME.utils.entity.setComponentProperty(test9, "visible", "true");
-                                    AFRAME.utils.entity.setComponentProperty(test10, "visible", "true");
-                                    AFRAME.utils.entity.setComponentProperty(test11, "visible", "true");
-                                    test4.addEventListener("movingended", function () {
-                                        //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
-                                        //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
-                                        //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
-                                        AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
-                                        AFRAME.utils.entity.setComponentProperty(test3, "visible", "false");
-                                        AFRAME.utils.entity.setComponentProperty(test5, "visible", "false");
-                                        AFRAME.utils.entity.setComponentProperty(test6, "visible", "false");
-                                        AFRAME.utils.entity.setComponentProperty(test7, "visible", "false");
-                                        AFRAME.utils.entity.setComponentProperty(test8, "visible", "false");
-                                        AFRAME.utils.entity.setComponentProperty(test9, "visible", "false");
-                                        AFRAME.utils.entity.setComponentProperty(test10, "visible", "false");
-                                        AFRAME.utils.entity.setComponentProperty(test11, "visible", "false");
-
-                                        test4.addEventListener("movingended", function () {
-                                            //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track4");
-                                            //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
-                                            //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track5");
-                                            AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
-                                            AFRAME.utils.entity.setComponentProperty(test3, "visible", "true");
-                                            AFRAME.utils.entity.setComponentProperty(test5, "visible", "true");
-                                            AFRAME.utils.entity.setComponentProperty(test6, "visible", "true");
-                                            AFRAME.utils.entity.setComponentProperty(test7, "visible", "true");
-                                            AFRAME.utils.entity.setComponentProperty(test8, "visible", "true");
-                                            AFRAME.utils.entity.setComponentProperty(test9, "visible", "true");
-                                            AFRAME.utils.entity.setComponentProperty(test10, "visible", "true");
-                                            AFRAME.utils.entity.setComponentProperty(test11, "visible", "true");
-                                        });
-                                    });
-
-                                });
-
-                            });
-                        });
-                    });
-                });
-            });
-               
-            
-
-            //else {
-            //    console.log('right');
-            //    mover.addEventListener("movingended", function () {
-            //        AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track4");
-            //        AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
-            //        console.log('left');
-            //        check = AFRAME.utils.entity.getComponentProperty(mover, 'alongpath.curve');
-
-            //    });
-            //}
-        
-       
-
-        
+        //green.addEventListener("movingended", function () {
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
+        //    //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
+        //    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //    green.addEventListener("movingended", function () {
+        //        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //        green.addEventListener("movingended", function () {
+        //            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //            green.addEventListener("movingended", function () {
+        //                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                green.addEventListener("movingended", function () {
+        //                    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                    green.addEventListener("movingended", function () {
+        //                        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                        green.addEventListener("movingended", function () {
+        //                            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                            green.addEventListener("movingended", function () {
+        //                                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                            });
+        //                        });
+        //                    });
+        //                });
+        //            });
+        //        });
+        //    });
+        //});
+        //yellow.addEventListener("movingended", function () {
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
+        //    //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
+        //    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //    yellow.addEventListener("movingended", function () {
+        //        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //        yellow.addEventListener("movingended", function () {
+        //            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //            yellow.addEventListener("movingended", function () {
+        //                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                yellow.addEventListener("movingended", function () {
+        //                    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                    yellow.addEventListener("movingended", function () {
+        //                        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                        yellow.addEventListener("movingended", function () {
+        //                            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                            yellow.addEventListener("movingended", function () {
+        //                                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                            });
+        //                        });
+        //                    });
+        //                });
+        //            });
+        //        });
+        //    });
+        //});
+        //orange.addEventListener("movingended", function () {
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
+        //    //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
+        //    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //    orange.addEventListener("movingended", function () {
+        //        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //        orange.addEventListener("movingended", function () {
+        //            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //            orange.addEventListener("movingended", function () {
+        //                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                orange.addEventListener("movingended", function () {
+        //                    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                    orange.addEventListener("movingended", function () {
+        //                        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                        orange.addEventListener("movingended", function () {
+        //                            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                            orange.addEventListener("movingended", function () {
+        //                                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                            });
+        //                        });
+        //                    });
+        //                });
+        //            });
+        //        });
+        //    });
+        //});
+        //pink.addEventListener("movingended", function () {
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
+        //    //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
+        //    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //    pink.addEventListener("movingended", function () {
+        //        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //        pink.addEventListener("movingended", function () {
+        //            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //            pink.addEventListener("movingended", function () {
+        //                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                pink.addEventListener("movingended", function () {
+        //                    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                    pink.addEventListener("movingended", function () {
+        //                        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                        pink.addEventListener("movingended", function () {
+        //                            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                            pink.addEventListener("movingended", function () {
+        //                                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                            });
+        //                        });
+        //                    });
+        //                });
+        //            });
+        //        });
+        //    });
+        //});
+        //purple.addEventListener("movingended", function () {
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
+        //    //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
+        //    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //    purple.addEventListener("movingended", function () {
+        //        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //        purple.addEventListener("movingended", function () {
+        //            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //            purple.addEventListener("movingended", function () {
+        //                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                purple.addEventListener("movingended", function () {
+        //                    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                    purple.addEventListener("movingended", function () {
+        //                        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                        purple.addEventListener("movingended", function () {
+        //                            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                            purple.addEventListener("movingended", function () {
+        //                                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                            });
+        //                        });
+        //                    });
+        //                });
+        //            });
+        //        });
+        //    });
+        //});
+        //lightblue.addEventListener("movingended", function () {
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
+        //    //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
+        //    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //    lightblue.addEventListener("movingended", function () {
+        //        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //        lightblue.addEventListener("movingended", function () {
+        //            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //            lightblue.addEventListener("movingended", function () {
+        //                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                lightblue.addEventListener("movingended", function () {
+        //                    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                    lightblue.addEventListener("movingended", function () {
+        //                        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                        lightblue.addEventListener("movingended", function () {
+        //                            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                            lightblue.addEventListener("movingended", function () {
+        //                                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                            });
+        //                        });
+        //                    });
+        //                });
+        //            });
+        //        });
+        //    });
+        //});
+        //brown.addEventListener("movingended", function () {
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
+        //    //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
+        //    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //    brown.addEventListener("movingended", function () {
+        //        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //        brown.addEventListener("movingended", function () {
+        //            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //            brown.addEventListener("movingended", function () {
+        //                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                brown.addEventListener("movingended", function () {
+        //                    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                    brown.addEventListener("movingended", function () {
+        //                        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                        brown.addEventListener("movingended", function () {
+        //                            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                            brown.addEventListener("movingended", function () {
+        //                                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                            });
+        //                        });
+        //                    });
+        //                });
+        //            });
+        //        });
+        //    });
+        //});
+        //blue.addEventListener("movingended", function () {
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
+        //    //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
+        //    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //    blue.addEventListener("movingended", function () {
+        //        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //        blue.addEventListener("movingended", function () {
+        //            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //            blue.addEventListener("movingended", function () {
+        //                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                blue.addEventListener("movingended", function () {
+        //                    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                    blue.addEventListener("movingended", function () {
+        //                        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                        blue.addEventListener("movingended", function () {
+        //                            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                            blue.addEventListener("movingended", function () {
+        //                                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                            });
+        //                        });
+        //                    });
+        //                });
+        //            });
+        //        });
+        //    });
+        //});
+        //red.addEventListener("movingended", function () {
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.curve", "#track5");
+        //    //AFRAME.utils.entity.setComponentProperty(this, "alongpath.dur", "3000");
+        //    //AFRAME.utils.entity.setComponentProperty(testing, "alongpath.curve", "#track4");
+        //    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //    red.addEventListener("movingended", function () {
+        //        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //        red.addEventListener("movingended", function () {
+        //            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //            red.addEventListener("movingended", function () {
+        //                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                red.addEventListener("movingended", function () {
+        //                    AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                    red.addEventListener("movingended", function () {
+        //                        AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                        red.addEventListener("movingended", function () {
+        //                            AFRAME.utils.entity.setComponentProperty(this, "visible", "false");
+        //                            red.addEventListener("movingended", function () {
+        //                                AFRAME.utils.entity.setComponentProperty(this, "visible", "true");
+        //                            });
+        //                        });
+        //                    });
+        //                });
+        //            });
+        //        });
+        //    });
+        //});
 
     
-   
-        
-
-  
-   
-    //var eyepoints = document.querySelectorAll(".triggers");
-
-    //if (eyepoints[i].attributes.visible == false) {
-    //    for (var i = 0; i < eyepoints.length; i++) {
-    //        eyepoints[i].addEventListener("alongpath-trigger-activated", function (e) {
-    //            AFRAME.utils.entity.setComponentProperty(this, "visible", true);
-    //        });
-    //        //    eyepoints[i].addEventListener("alongpath-trigger-deactivated", function (e) {
-    //        //        AFRAME.utils.entity.setComponentProperty(this, "visible", false);
-    //        //    });
-    //        //}
-    //    }
-
-    //}
-    //    else {
-    //        for (var i = 0; i < eyepoints.length; i++) {
-    //            //eyepoints[i].addEventListener("alongpath-trigger-activated", function (e) {
-    //            //    AFRAME.utils.entity.setComponentProperty(this, "visible", true);
-    //            //});
-    //            eyepoints[i].addEventListener("alongpath-trigger-activated", function (e) {
-    //                AFRAME.utils.entity.setComponentProperty(this, "visible", false);
-    //            });
-    //        }
-    //}
-
-    //var crow = document.querySelectorAll("#crow");
-    //for (var i = 0; i < crow.length; i++) {
-    //    crow[i].addEventListener("alongpath-trigger-actevated", function (e) {
-    //        var Crow = document.querySelector('#Crow');
-    //        AFRAME.utils.entity.setComponentProperty(Crow, "visible", true);
-    //    });
-        
-    //}
-
-      
-    
-
-    //console.log(crow);
-    //console.log(eyepoints);
-    //console.log('Hello test test !!!');
-
 </script>
